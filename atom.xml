@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.github.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.github.io/"/>
-  <updated>2020-10-28T13:31:56.676Z</updated>
+  <updated>2020-10-29T12:46:32.592Z</updated>
   <id>https://shanjianyinxian.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="https://shanjianyinxian.github.io/2020/10/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://shanjianyinxian.github.io/2020/10/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-10-29T12:46:32.000Z</published>
+    <updated>2020-10-29T12:46:32.592Z</updated>
+    
+    <content type="html"><![CDATA[<p>欢迎来到我的博客，建站费了一些功夫，好在终于弄完了。主要记录兴趣，生活和技术笔记，希望多多交流。</p><p>最后，欢迎来到程小罗的虎啸山庄！o(<em>￣▽￣</em>)ブ</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;欢迎来到我的博客，建站费了一些功夫，好在终于弄完了。主要记录兴趣，生活和技术笔记，希望多多交流。&lt;/p&gt;
+&lt;p&gt;最后，欢迎来到程小罗的虎啸山庄！o(&lt;em&gt;￣▽￣&lt;/em&gt;)ブ&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://shanjianyinxian.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="随笔" scheme="https://shanjianyinxian.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
