@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.github.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.github.io/"/>
-  <updated>2020-10-29T12:46:32.592Z</updated>
+  <updated>2020-10-30T06:52:12.217Z</updated>
   <id>https://shanjianyinxian.github.io/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos安装jdk1.8</title>
+    <link href="https://shanjianyinxian.github.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/"/>
+    <id>https://shanjianyinxian.github.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/</id>
+    <published>2020-10-30T06:28:11.000Z</published>
+    <updated>2020-10-30T06:52:12.217Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>操作系统：centos7<br>软件：jdk1.8</p></blockquote><p>这里简单记录了当时自己安装jdk1.8的过程。</p><hr><ol><li><p>将jdk解压至/usr/local/路径下</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf jdk-8u152-linux-x64.tar.gz -C /usr/<span class="built_in">local</span>/</span></span><br></pre></td></tr></table></figure></li><li><p>设置环境变量</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim /etc/profile </span></span><br></pre></td></tr></table></figure><p>末尾加入</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/share/jdk1.8.0_152</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br></pre></td></tr></table></figure></li><li><p>使环境变量生效</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure></li><li><p>添加软连接</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ln -s /usr/<span class="built_in">local</span>/jdk1.8.0_152/bin/java /usr/bin/java</span></span><br></pre></td></tr></table></figure></li><li><p>检查是否安装成功</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> java -version</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;操作系统：centos7&lt;br&gt;软件：jdk1.8&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这里简单记录了当时自己安装jdk1.8的过程。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;将jdk解压至/usr/local/路径下&lt;/p&gt;
+&lt;figur</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="linux" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
+    
+    <category term="java" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/java/"/>
+    
+    
+    <category term="linux" scheme="https://shanjianyinxian.github.io/tags/linux/"/>
+    
+    <category term="java" scheme="https://shanjianyinxian.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>我的第一篇博客</title>
