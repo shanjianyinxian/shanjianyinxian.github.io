@@ -53,6 +53,20 @@
 
   
   <url>
+    <loc>https://shanjianyinxian.github.io/tags/ELK/</loc>
+    <lastmod>2020-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://shanjianyinxian.github.io/tags/kibana/</loc>
+    <lastmod>2020-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://shanjianyinxian.github.io/tags/linux/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
@@ -73,24 +87,17 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://shanjianyinxian.github.io/tags/ELK/</loc>
-    <lastmod>2020-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://shanjianyinxian.github.io/tags/kibana/</loc>
-    <lastmod>2020-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2020-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -112,13 +119,6 @@
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2020-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
