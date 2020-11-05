@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.github.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.github.io/"/>
-  <updated>2020-11-05T03:13:38.032Z</updated>
+  <updated>2020-11-05T03:20:15.519Z</updated>
   <id>https://shanjianyinxian.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://shanjianyinxian.github.io/2020/11/05/Kibana%E7%9A%84Monitoring%E4%B8%8D%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%B6%E9%9B%86%E5%92%8C%E7%9B%91%E6%8E%A7/"/>
     <id>https://shanjianyinxian.github.io/2020/11/05/Kibana%E7%9A%84Monitoring%E4%B8%8D%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%B6%E9%9B%86%E5%92%8C%E7%9B%91%E6%8E%A7/</id>
     <published>2020-11-05T02:42:55.000Z</published>
-    <updated>2020-11-05T03:13:38.032Z</updated>
+    <updated>2020-11-05T03:20:15.519Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>软件：ELK7.1.1</p></blockquote><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Kibana的Monitoring不进行数据的收集和监控，配置正确的情况下无法找到监控的数据。出现了如下的问题：</p><p><img src="/.io//1.jpg" alt="Kibana的Monitoring不进行数据的收集和监控"></p><hr><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><p>根据网上人的说法，有 ingest node 问题，还有配置文件不正确等。我这里提供一个新的思路。这是由于服务器与客户端的时间不同步造成的。<br><img src="/.io//2.jpg" alt="由于服务器与客户端的时间不同步"></p><p>比如这里差了80分钟，将kibana监控界面的时间窗跨度扩大到80分钟以上时候即可得到数据。因此需要注意服务器的时间同步。</p><hr><h3 id="其他相关解决方案"><a href="#其他相关解决方案" class="headerlink" title="其他相关解决方案"></a>其他相关解决方案</h3><p><a href="https://elasticsearch.cn/question/7661">未打开 ingest node</a> </p><p><a href="https://github.com/elastic/kibana/issues/14398">GitHub讨论</a></p><p><a href="https://www.golinuxcloud.com/install-configure-metricbeat-monitor-cluster/#Error_Unable_to_find_the_cluster_in_the_selected_time_range_UUID">配置文件中监控数据收集时间过短</a></p>]]></content>
     
