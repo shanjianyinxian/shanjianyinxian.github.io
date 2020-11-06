@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.github.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.github.io/"/>
-  <updated>2020-11-05T03:20:15.519Z</updated>
+  <updated>2020-11-06T06:40:22.277Z</updated>
   <id>https://shanjianyinxian.github.io/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>0116. 填充每个节点的下一个右侧节点指针</title>
+    <link href="https://shanjianyinxian.github.io/2020/11/06/0116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88/"/>
+    <id>https://shanjianyinxian.github.io/2020/11/06/0116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88/</id>
+    <published>2020-11-06T06:36:45.000Z</published>
+    <updated>2020-11-06T06:40:22.277Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="116-填充每个节点的下一个右侧节点指针"><a href="#116-填充每个节点的下一个右侧节点指针" class="headerlink" title="116. 填充每个节点的下一个右侧节点指针"></a><a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/">116. 填充每个节点的下一个右侧节点指针</a></h4><blockquote><ul><li>双指针</li><li>递归</li></ul></blockquote><p>本题使用层序遍历使用队列可以十分轻松的解决，由于题目中需要常数级别的空间复杂度，因此不使用该方法。按照本题题干中的提示，递归的调用栈所占空间不算空间复杂度。因此使用递归。</p><p>本题使用递归（前序遍历）方法解决：</p><ol><li><p>边界条件<br>如果根节点为null，则返回</p></li><li><p>递归过程<br>为根节点的两个孩子节点找到next</p><p><strong>左孩子节点找next</strong>：由于是完全二叉树，因此父节点一定包含左右两个孩子节点，root.left.next = root.right; 如果该节点为叶子节点则直接返回。</p><p><strong>右孩子节点找next</strong>：如果根节点root的next存在的话；则右孩子节点的next为root.next的左孩子节点。即root.right.next = root.next.left;</p><p>递归执行root.left和root.right</p></li></ol><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">// Definition for a Node.</span></span><br><span class="line"><span class="comment">class Node &#123;</span></span><br><span class="line"><span class="comment">    public int val;</span></span><br><span class="line"><span class="comment">    public Node left;</span></span><br><span class="line"><span class="comment">    public Node right;</span></span><br><span class="line"><span class="comment">    public Node next;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public Node() &#123;&#125;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    public Node(int _val) &#123;</span></span><br><span class="line"><span class="comment">        val = _val;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public Node(int _val, Node _left, Node _right, Node _next) &#123;</span></span><br><span class="line"><span class="comment">        val = _val;</span></span><br><span class="line"><span class="comment">        left = _left;</span></span><br><span class="line"><span class="comment">        right = _right;</span></span><br><span class="line"><span class="comment">        next = _next;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">connect</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        conn(root);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">conn</span><span class="params">(Node root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(root.left != <span class="keyword">null</span> &amp;&amp; root.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">            root.left.next = root.right;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(root.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">            root.right.next = root.next.left;</span><br><span class="line">        &#125;</span><br><span class="line">        conn(root.left);</span><br><span class="line">        conn(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;116-填充每个节点的下一个右侧节点指针&quot;&gt;&lt;a href=&quot;#116-填充每个节点的下一个右侧节点指针&quot; class=&quot;headerlink&quot; title=&quot;116. 填充每个节点的下一个右侧节点指针&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    
+    <category term="双指针" scheme="https://shanjianyinxian.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+    <category term="递归" scheme="https://shanjianyinxian.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>0057. 插入区间</title>
+    <link href="https://shanjianyinxian.github.io/2020/11/06/0057-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/"/>
+    <id>https://shanjianyinxian.github.io/2020/11/06/0057-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/</id>
+    <published>2020-11-06T06:25:05.000Z</published>
+    <updated>2020-11-06T06:40:37.440Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="57-插入区间"><a href="#57-插入区间" class="headerlink" title="57. 插入区间"></a><a href="https://leetcode-cn.com/problems/insert-interval/">57. 插入区间</a></h4><blockquote><p>大美兴，川普王！🤩</p><ul><li>朴素</li></ul></blockquote><p>这条hard题看完就知道咋做，一度怀疑自己是不是想的太简单了。直接看题解发现就是这么简单。。。</p><p>思路很简单，初始化合并区间的开始与结束为新插入区间newInterval的开始与结束，如果新插入区间的开始在某个已有区间内，则该已有区间的开始为合并区间的开始。如果新插入区间的结束在某个已有区间内，则该已有区间的结束为合并区间的结束，并将合并区间加入答案列表。</p><p>处理几个边界条件：</p><ul><li>如果新插入区间的结束不在某个已有区间内，则判断到newBack &lt; currPrev 时先将合并区间进入答案列表。</li><li>如果遍历完了还是没有插入合并区间，则在答案输出前将合并区间进入答案列表。</li></ul><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] insert(<span class="keyword">int</span>[][] intervals, <span class="keyword">int</span>[] newInterval) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> newPrev = newInterval[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> newBack = newInterval[<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        List&lt;<span class="keyword">int</span>[]&gt; ansList = <span class="keyword">new</span> ArrayList&lt;<span class="keyword">int</span>[]&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mixPrev = newPrev;</span><br><span class="line">        <span class="keyword">int</span> mixBack = newBack;</span><br><span class="line">        <span class="keyword">boolean</span> isInsert = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] i : intervals) &#123;</span><br><span class="line">            <span class="keyword">int</span> currPrev = i[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> currBack = i[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(currBack &lt; newPrev)&#123;</span><br><span class="line">                ansList.add(i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>( currPrev &lt;= newPrev &amp;&amp; newPrev &lt;= currBack)&#123;</span><br><span class="line">                mixPrev = currPrev;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>( currPrev &lt;= newBack &amp;&amp; newBack &lt;= currBack)&#123;</span><br><span class="line">                mixBack = currBack;</span><br><span class="line">                ansList.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;mixPrev,mixBack&#125;);</span><br><span class="line">                isInsert = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(newBack &lt; currPrev )&#123;</span><br><span class="line">                <span class="keyword">if</span>(isInsert == <span class="keyword">false</span>)&#123;</span><br><span class="line">                    ansList.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;mixPrev,mixBack&#125;);</span><br><span class="line">                    isInsert = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                ansList.add(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(isInsert == <span class="keyword">false</span>)&#123;</span><br><span class="line">            ansList.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;mixPrev,mixBack&#125;);</span><br><span class="line">            isInsert = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> [][]ans = <span class="keyword">new</span> <span class="keyword">int</span>[ansList.size()][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ans.length; i++) &#123;</span><br><span class="line">            ans[i] = ansList.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;57-插入区间&quot;&gt;&lt;a href=&quot;#57-插入区间&quot; class=&quot;headerlink&quot; title=&quot;57. 插入区间&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/insert-interval/&quot;&gt;57. </summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    
+    <category term="朴素" scheme="https://shanjianyinxian.github.io/tags/%E6%9C%B4%E7%B4%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>0052. N皇后 II</title>
+    <link href="https://shanjianyinxian.github.io/2020/11/06/0052-N%E7%9A%87%E5%90%8E%20II/"/>
+    <id>https://shanjianyinxian.github.io/2020/11/06/0052-N%E7%9A%87%E5%90%8E%20II/</id>
+    <published>2020-11-06T06:12:55.000Z</published>
+    <updated>2020-11-06T06:41:18.243Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="52-N皇后-II"><a href="#52-N皇后-II" class="headerlink" title="52. N皇后 II"></a><a href="https://leetcode-cn.com/problems/n-queens-ii/">52. N皇后 II</a></h4><blockquote><ul><li>N皇后</li><li>位运算</li><li>DFS</li></ul></blockquote><p>看的网上别人的思路自己复现出来的结果。充分运用位运算和深度优先搜索。用位运算表示当前位置能否放置棋子的情况，0表示未放置棋子，1表示不能放置棋子。</p><p>比如一个8位的棋盘，未放置任何棋子时第一行为00000000，若第四个位置放置了棋子。则变为00010000。第二行可以放置棋子的情况变成00111000。这是由于第一行的第四个位置放置了棋子，因此这个棋子的左下角第二行第三位，正下方第二行第四位和右下角第二行第五位都无法放置棋子。顺延下去，左下角的左下角：第三行第二位；正下方的正下方：第三行第四位；因此思路中使用了三个变量，left表示左斜下方的不可放置位，right表示右斜下方的不可放置位，col表示垂直列的不可放置位。</p><p>按照上文的例子第一行为00010000。则第二行left为00100000由上一行左移一位得到，col为00010000，right为00001000由上一行右移一位得到，因此第二行的可放置位情况为(left | right | col)，即00111000。left，right如同水纹散开分别进行左移右移。与此同时第二行插入新的棋子，即表示当前产生了新的“水纹”。因此newleft = (left | colbit) &lt;&lt; 1；newright = (right | colbit) &gt;&gt; 1;colbit表示插入的新的棋子位置。因此之后的“水纹”是新“水纹”和旧“水纹”的融合。列的情况比较简单。</p><p>使用深度优先搜索（dfs）进行整个运算过程。深度优先搜索的过程中，判断可插入位置是否还有空余位置可以插入，如果没能执行完最后一行就已经没有位置了，说明之前的插入方法不对。程序执行完自然返回并且无任何操作。如果已经执行完成了最后一行if(row &gt;= n)，则最终的结果+1并且直接返回。</p><p>注意：移位运算符的优先级低于加减乘除，因此需要注意在需要的地方加上括号。</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ans;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">totalNQueens</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        currentLine(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,n);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//left表示左斜已被插入位置，right表示右斜已被插入位置，col表示垂直已被插入位置。0表示未被插入，1表示已插入</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">currentLine</span><span class="params">(<span class="keyword">int</span> left,<span class="keyword">int</span> right, <span class="keyword">int</span> row, <span class="keyword">int</span> col, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(row &gt;= n) &#123;</span><br><span class="line">            ans++;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//计算当前的可插入情况。1为可插入 0为不可插入</span></span><br><span class="line">        <span class="keyword">int</span> current = ~(left | right | col) &amp; ((<span class="number">1</span>&lt;&lt;n) -<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">while</span>(current &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> colbit = current &amp; - current;</span><br><span class="line">            <span class="keyword">int</span> newleft = (left | colbit) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> newright = (right | colbit) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> newcol = col | colbit;</span><br><span class="line">            <span class="keyword">int</span> newrow = row + <span class="number">1</span>;</span><br><span class="line">            currentLine(newleft,newright,newrow,newcol,n);</span><br><span class="line">        </span><br><span class="line">            current = current &amp; (current - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;52-N皇后-II&quot;&gt;&lt;a href=&quot;#52-N皇后-II&quot; class=&quot;headerlink&quot; title=&quot;52. N皇后 II&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/n-queens-ii/&quot;&gt;52</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="N皇后" scheme="https://shanjianyinxian.github.io/tags/N%E7%9A%87%E5%90%8E/"/>
+    
+    <category term="位运算" scheme="https://shanjianyinxian.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+    <category term="DFS" scheme="https://shanjianyinxian.github.io/tags/DFS/"/>
+    
+    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>Kibana的Monitoring不进行数据的收集和监控</title>
