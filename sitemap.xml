@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shanjianyinxian.github.io/2020/11/18/linux-centos7%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99%E5%B9%B6%E4%B8%94%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/</loc>
+    
+    <lastmod>2020-11-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shanjianyinxian.github.io/2020/11/16/es%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%EF%BC%88%E7%AE%80%E5%8D%95%E7%89%88%EF%BC%89/</loc>
     
     <lastmod>2020-11-16</lastmod>
@@ -95,7 +102,7 @@
 
   <url>
     <loc>https://shanjianyinxian.github.io/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -103,126 +110,140 @@
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/N%E7%9A%87%E5%90%8E/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/DFS/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/leetcode/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E6%9C%B4%E7%B4%A0/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E9%80%92%E5%BD%92/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E9%93%BE%E8%A1%A8/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E5%93%91%E8%8A%82%E7%82%B9/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E6%A0%91/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/ELK/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/kibana/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/linux/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/java/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/elasticsearch/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://shanjianyinxian.github.io/tags/centos/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://shanjianyinxian.github.io/tags/firewalld/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -231,42 +252,42 @@
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/linux/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/java/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://shanjianyinxian.github.io/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
