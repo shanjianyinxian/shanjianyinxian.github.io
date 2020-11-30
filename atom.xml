@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.github.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.github.io/"/>
-  <updated>2020-11-23T12:25:17.010Z</updated>
+  <updated>2020-11-30T15:03:56.971Z</updated>
   <id>https://shanjianyinxian.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql-mysql5.5用户无需密码即可登录问题</title>
+    <link href="https://shanjianyinxian.github.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/"/>
+    <id>https://shanjianyinxian.github.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/</id>
+    <published>2020-11-30T14:49:43.000Z</published>
+    <updated>2020-11-30T15:03:56.971Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>软件：mysql5.5<br>操作系统：centos7</p></blockquote><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>今天在Linux上安装了mysql5.5，在创建了用户之后也正常设置了密码。但是登录的时候输入密码无法登录。</p><hr><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>使用root用户登录mysql，查看user表。</p><p>主要问题在于user表内含有账号和密码都为空的项。将其删除即可</p><p><img src="/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/1.jpg" alt="解决方案"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;软件：mysql5.5&lt;br&gt;操作系统：centos7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;今天在Linux</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="mysql" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/mysql/"/>
+    
+    
+    <category term="mysql" scheme="https://shanjianyinxian.github.io/tags/mysql/"/>
+    
+    <category term="数据库" scheme="https://shanjianyinxian.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>ELK-安装es集群</title>
@@ -108,9 +139,9 @@
     
     <category term="ELK" scheme="https://shanjianyinxian.github.io/tags/ELK/"/>
     
-    <category term="kibana" scheme="https://shanjianyinxian.github.io/tags/kibana/"/>
-    
     <category term="elasticsearch" scheme="https://shanjianyinxian.github.io/tags/elasticsearch/"/>
+    
+    <category term="kibana" scheme="https://shanjianyinxian.github.io/tags/kibana/"/>
     
     <category term="生命周期管理" scheme="https://shanjianyinxian.github.io/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86/"/>
     
