@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.gitee.io/"/>
-  <updated>2021-07-06T08:07:38.207Z</updated>
+  <updated>2021-07-06T09:04:28.547Z</updated>
   <id>https://shanjianyinxian.gitee.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo指令执行失败问题解决</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/07/06/hexo%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/07/06/hexo%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
+    <published>2021-07-06T08:45:55.000Z</published>
+    <updated>2021-07-06T09:04:28.547Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>软件：hexo，hexo主题（bufferfly）</p></blockquote><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>今天重新部署hexo博客，出现了如下的问题，所有得hexo指令都报如下错误：</p><p><img src="/2021/07/06/hexo%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/hexo%E6%8A%A5%E9%94%99_%E9%97%AE%E9%A2%98.png" alt="hexo报错_问题"></p><hr><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>经过排查，原因是node版本太低。之前使用了nvm安装了多版本的node，当前切换到了低版本的node。这里切换回高版本即可解决问题。</p><img src="/2021/07/06/hexo%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/hexo报错_解决.png" alt="hexo报错_解决" style="zoom: 80%;">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;软件：hexo，hexo主题（bufferfly）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;今天重新部署hexo</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="hexo" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://shanjianyinxian.gitee.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>好久不见</title>
