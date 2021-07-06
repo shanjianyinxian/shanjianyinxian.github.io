@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.gitee.io/"/>
-  <updated>2020-12-02T02:53:47.306Z</updated>
+  <updated>2021-07-06T08:01:04.795Z</updated>
   <id>https://shanjianyinxian.gitee.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>好久不见</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/07/06/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/07/06/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/</id>
+    <published>2021-07-06T06:59:13.000Z</published>
+    <updated>2021-07-06T08:01:04.795Z</updated>
+    
+    <content type="html"><![CDATA[<p>好久没有更新自己的博客了，过完年之后工作十分忙碌，比赛，项目，运维等等一系列事情需要去做。当时觉得一直不更新也不好，于是中途关闭了自己的博客。虽然博客关了，但这段时间的工作也一直保持学习。工作的过程也会遇到很多问题， 每次问题的解决对个人来说也是一次成长。这次重新开通博客也是希望能和更多的人交流。</p><p>最后，最近gitee没法开启个人博客。因此暂时只保留github的页面。之后也会同步gitee的个人博客。主要是github可能有时候访问较慢，有了gitee之后会好很多。</p><p>以上。o(<em>￣▽￣</em>)ブ</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;好久没有更新自己的博客了，过完年之后工作十分忙碌，比赛，项目，运维等等一系列事情需要去做。当时觉得一直不更新也不好，于是中途关闭了自己的博客。虽然博客关了，但这段时间的工作也一直保持学习。工作的过程也会遇到很多问题， 每次问题的解决对个人来说也是一次成长。这次重新开通博客也</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://shanjianyinxian.gitee.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="随笔" scheme="https://shanjianyinxian.gitee.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql-mysql5.5用户无需密码即可登录问题</title>
