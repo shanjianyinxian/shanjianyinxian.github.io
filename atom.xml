@@ -3,11 +3,11 @@
   <title>程小罗的虎啸山庄</title>
   
   
-  <link href="https://shanjianyinxian.github.io/atom.xml" rel="self"/>
+  <link href="https://shanjianyinxian.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://shanjianyinxian.github.io/"/>
+  <link href="https://shanjianyinxian.gitee.io/"/>
   <updated>2020-12-02T02:53:47.306Z</updated>
-  <id>https://shanjianyinxian.github.io/</id>
+  <id>https://shanjianyinxian.gitee.io/</id>
   
   <author>
     <name>程小罗</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>mysql-mysql5.5用户无需密码即可登录问题</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/</id>
     <published>2020-11-30T14:49:43.000Z</published>
     <updated>2020-12-02T02:53:47.306Z</updated>
     
@@ -36,21 +36,21 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="mysql" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/mysql/"/>
+    <category term="mysql" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/mysql/"/>
     
     
-    <category term="mysql" scheme="https://shanjianyinxian.github.io/tags/mysql/"/>
+    <category term="mysql" scheme="https://shanjianyinxian.gitee.io/tags/mysql/"/>
     
-    <category term="数据库" scheme="https://shanjianyinxian.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://shanjianyinxian.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>ELK-安装es集群</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/23/ELK-%E5%AE%89%E8%A3%85es%E9%9B%86%E7%BE%A4/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/23/ELK-%E5%AE%89%E8%A3%85es%E9%9B%86%E7%BE%A4/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/23/ELK-%E5%AE%89%E8%A3%85es%E9%9B%86%E7%BE%A4/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/23/ELK-%E5%AE%89%E8%A3%85es%E9%9B%86%E7%BE%A4/</id>
     <published>2020-11-23T11:30:18.000Z</published>
     <updated>2020-11-23T12:25:17.010Z</updated>
     
@@ -68,21 +68,21 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="ELK" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
     
     
-    <category term="ELK" scheme="https://shanjianyinxian.github.io/tags/ELK/"/>
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/tags/ELK/"/>
     
-    <category term="elasticsearch" scheme="https://shanjianyinxian.github.io/tags/elasticsearch/"/>
+    <category term="elasticsearch" scheme="https://shanjianyinxian.gitee.io/tags/elasticsearch/"/>
     
   </entry>
   
   <entry>
     <title>linux-centos7如何开启防火墙并且开放端口</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/18/linux-centos7%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99%E5%B9%B6%E4%B8%94%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/18/linux-centos7%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99%E5%B9%B6%E4%B8%94%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/18/linux-centos7%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99%E5%B9%B6%E4%B8%94%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/18/linux-centos7%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99%E5%B9%B6%E4%B8%94%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/</id>
     <published>2020-11-18T08:31:17.000Z</published>
     <updated>2020-11-18T09:11:55.395Z</updated>
     
@@ -99,23 +99,23 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="linux" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
     
     
-    <category term="linux" scheme="https://shanjianyinxian.github.io/tags/linux/"/>
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/tags/linux/"/>
     
-    <category term="centos" scheme="https://shanjianyinxian.github.io/tags/centos/"/>
+    <category term="centos" scheme="https://shanjianyinxian.gitee.io/tags/centos/"/>
     
-    <category term="firewalld" scheme="https://shanjianyinxian.github.io/tags/firewalld/"/>
+    <category term="firewalld" scheme="https://shanjianyinxian.gitee.io/tags/firewalld/"/>
     
   </entry>
   
   <entry>
     <title>es生命周期管理（简单版）</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/16/es%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%EF%BC%88%E7%AE%80%E5%8D%95%E7%89%88%EF%BC%89/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/16/es%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%EF%BC%88%E7%AE%80%E5%8D%95%E7%89%88%EF%BC%89/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/16/es%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%EF%BC%88%E7%AE%80%E5%8D%95%E7%89%88%EF%BC%89/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/16/es%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%EF%BC%88%E7%AE%80%E5%8D%95%E7%89%88%EF%BC%89/</id>
     <published>2020-11-16T05:43:37.000Z</published>
     <updated>2020-11-19T06:52:34.226Z</updated>
     
@@ -132,25 +132,25 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="ELK" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
     
     
-    <category term="ELK" scheme="https://shanjianyinxian.github.io/tags/ELK/"/>
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/tags/ELK/"/>
     
-    <category term="elasticsearch" scheme="https://shanjianyinxian.github.io/tags/elasticsearch/"/>
+    <category term="elasticsearch" scheme="https://shanjianyinxian.gitee.io/tags/elasticsearch/"/>
     
-    <category term="kibana" scheme="https://shanjianyinxian.github.io/tags/kibana/"/>
+    <category term="kibana" scheme="https://shanjianyinxian.gitee.io/tags/kibana/"/>
     
-    <category term="生命周期管理" scheme="https://shanjianyinxian.github.io/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86/"/>
+    <category term="生命周期管理" scheme="https://shanjianyinxian.gitee.io/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>0328. 奇偶链表</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/13/0328-%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/13/0328-%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/13/0328-%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/13/0328-%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8/</id>
     <published>2020-11-13T01:47:14.000Z</published>
     <updated>2020-11-13T01:54:10.556Z</updated>
     
@@ -169,25 +169,25 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    <category term="leetcode" scheme="https://shanjianyinxian.gitee.io/tags/leetcode/"/>
     
-    <category term="双指针" scheme="https://shanjianyinxian.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    <category term="双指针" scheme="https://shanjianyinxian.gitee.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-    <category term="链表" scheme="https://shanjianyinxian.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    <category term="链表" scheme="https://shanjianyinxian.gitee.io/tags/%E9%93%BE%E8%A1%A8/"/>
     
-    <category term="哑节点" scheme="https://shanjianyinxian.github.io/tags/%E5%93%91%E8%8A%82%E7%82%B9/"/>
+    <category term="哑节点" scheme="https://shanjianyinxian.gitee.io/tags/%E5%93%91%E8%8A%82%E7%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>0206. 反转链表</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/12/0206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/12/0206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/12/0206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/12/0206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</id>
     <published>2020-11-12T12:03:47.000Z</published>
     <updated>2020-11-12T12:18:57.346Z</updated>
     
@@ -201,23 +201,23 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    <category term="leetcode" scheme="https://shanjianyinxian.gitee.io/tags/leetcode/"/>
     
-    <category term="链表" scheme="https://shanjianyinxian.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    <category term="链表" scheme="https://shanjianyinxian.gitee.io/tags/%E9%93%BE%E8%A1%A8/"/>
     
-    <category term="哑节点" scheme="https://shanjianyinxian.github.io/tags/%E5%93%91%E8%8A%82%E7%82%B9/"/>
+    <category term="哑节点" scheme="https://shanjianyinxian.gitee.io/tags/%E5%93%91%E8%8A%82%E7%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>0865. 具有所有最深节点的最小子树</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/07/0865-%E5%85%B7%E6%9C%89%E6%89%80%E6%9C%89%E6%9C%80%E6%B7%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E6%A0%91/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/07/0865-%E5%85%B7%E6%9C%89%E6%89%80%E6%9C%89%E6%9C%80%E6%B7%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E6%A0%91/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/07/0865-%E5%85%B7%E6%9C%89%E6%89%80%E6%9C%89%E6%9C%80%E6%B7%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E6%A0%91/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/07/0865-%E5%85%B7%E6%9C%89%E6%89%80%E6%9C%89%E6%9C%80%E6%B7%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E6%A0%91/</id>
     <published>2020-11-07T05:46:55.000Z</published>
     <updated>2020-11-12T12:19:22.024Z</updated>
     
@@ -231,23 +231,23 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    <category term="leetcode" scheme="https://shanjianyinxian.gitee.io/tags/leetcode/"/>
     
-    <category term="树" scheme="https://shanjianyinxian.github.io/tags/%E6%A0%91/"/>
+    <category term="树" scheme="https://shanjianyinxian.gitee.io/tags/%E6%A0%91/"/>
     
-    <category term="层序遍历" scheme="https://shanjianyinxian.github.io/tags/%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+    <category term="层序遍历" scheme="https://shanjianyinxian.gitee.io/tags/%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
     
   </entry>
   
   <entry>
     <title>0116. 填充每个节点的下一个右侧节点指针</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/06/0116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/06/0116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/06/0116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/06/0116-%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88/</id>
     <published>2020-11-06T06:36:45.000Z</published>
     <updated>2020-11-06T06:40:22.277Z</updated>
     
@@ -261,23 +261,23 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    <category term="leetcode" scheme="https://shanjianyinxian.gitee.io/tags/leetcode/"/>
     
-    <category term="双指针" scheme="https://shanjianyinxian.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    <category term="双指针" scheme="https://shanjianyinxian.gitee.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-    <category term="递归" scheme="https://shanjianyinxian.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    <category term="递归" scheme="https://shanjianyinxian.gitee.io/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
   <entry>
     <title>0057. 插入区间</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/06/0057-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/06/0057-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/06/0057-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/06/0057-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/</id>
     <published>2020-11-06T06:25:05.000Z</published>
     <updated>2020-11-06T06:40:37.440Z</updated>
     
@@ -291,21 +291,21 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    <category term="leetcode" scheme="https://shanjianyinxian.gitee.io/tags/leetcode/"/>
     
-    <category term="朴素" scheme="https://shanjianyinxian.github.io/tags/%E6%9C%B4%E7%B4%A0/"/>
+    <category term="朴素" scheme="https://shanjianyinxian.gitee.io/tags/%E6%9C%B4%E7%B4%A0/"/>
     
   </entry>
   
   <entry>
     <title>0052. N皇后 II</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/06/0052-N%E7%9A%87%E5%90%8E%20II/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/06/0052-N%E7%9A%87%E5%90%8E%20II/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/06/0052-N%E7%9A%87%E5%90%8E%20II/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/06/0052-N%E7%9A%87%E5%90%8E%20II/</id>
     <published>2020-11-06T06:12:55.000Z</published>
     <updated>2020-11-06T06:41:18.243Z</updated>
     
@@ -319,25 +319,25 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="算法" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="N皇后" scheme="https://shanjianyinxian.github.io/tags/N%E7%9A%87%E5%90%8E/"/>
+    <category term="N皇后" scheme="https://shanjianyinxian.gitee.io/tags/N%E7%9A%87%E5%90%8E/"/>
     
-    <category term="位运算" scheme="https://shanjianyinxian.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    <category term="位运算" scheme="https://shanjianyinxian.gitee.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-    <category term="DFS" scheme="https://shanjianyinxian.github.io/tags/DFS/"/>
+    <category term="DFS" scheme="https://shanjianyinxian.gitee.io/tags/DFS/"/>
     
-    <category term="leetcode" scheme="https://shanjianyinxian.github.io/tags/leetcode/"/>
+    <category term="leetcode" scheme="https://shanjianyinxian.gitee.io/tags/leetcode/"/>
     
   </entry>
   
   <entry>
     <title>Kibana的Monitoring不进行数据的收集和监控</title>
-    <link href="https://shanjianyinxian.github.io/2020/11/05/Kibana%E7%9A%84Monitoring%E4%B8%8D%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%B6%E9%9B%86%E5%92%8C%E7%9B%91%E6%8E%A7/"/>
-    <id>https://shanjianyinxian.github.io/2020/11/05/Kibana%E7%9A%84Monitoring%E4%B8%8D%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%B6%E9%9B%86%E5%92%8C%E7%9B%91%E6%8E%A7/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/11/05/Kibana%E7%9A%84Monitoring%E4%B8%8D%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%B6%E9%9B%86%E5%92%8C%E7%9B%91%E6%8E%A7/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/11/05/Kibana%E7%9A%84Monitoring%E4%B8%8D%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%B6%E9%9B%86%E5%92%8C%E7%9B%91%E6%8E%A7/</id>
     <published>2020-11-05T02:42:55.000Z</published>
     <updated>2020-11-05T03:20:15.519Z</updated>
     
@@ -354,21 +354,21 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="ELK" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
     
     
-    <category term="ELK" scheme="https://shanjianyinxian.github.io/tags/ELK/"/>
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/tags/ELK/"/>
     
-    <category term="kibana" scheme="https://shanjianyinxian.github.io/tags/kibana/"/>
+    <category term="kibana" scheme="https://shanjianyinxian.gitee.io/tags/kibana/"/>
     
   </entry>
   
   <entry>
     <title>centos安装jdk1.8</title>
-    <link href="https://shanjianyinxian.github.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/"/>
-    <id>https://shanjianyinxian.github.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/</id>
     <published>2020-10-30T06:28:11.000Z</published>
     <updated>2020-10-30T06:52:12.217Z</updated>
     
@@ -389,23 +389,23 @@
     
     
     
-    <category term="技术" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="linux" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
     
-    <category term="java" scheme="https://shanjianyinxian.github.io/categories/%E6%8A%80%E6%9C%AF/java/"/>
+    <category term="java" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/java/"/>
     
     
-    <category term="linux" scheme="https://shanjianyinxian.github.io/tags/linux/"/>
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/tags/linux/"/>
     
-    <category term="java" scheme="https://shanjianyinxian.github.io/tags/java/"/>
+    <category term="java" scheme="https://shanjianyinxian.gitee.io/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>我的第一篇博客</title>
-    <link href="https://shanjianyinxian.github.io/2020/10/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://shanjianyinxian.github.io/2020/10/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/10/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/10/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2020-10-29T12:46:32.000Z</published>
     <updated>2020-10-29T12:46:32.592Z</updated>
     
@@ -421,17 +421,17 @@
     
     
     
-    <category term="生活" scheme="https://shanjianyinxian.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://shanjianyinxian.gitee.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="随笔" scheme="https://shanjianyinxian.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://shanjianyinxian.gitee.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://shanjianyinxian.github.io/2020/10/28/hello-world/"/>
-    <id>https://shanjianyinxian.github.io/2020/10/28/hello-world/</id>
+    <link href="https://shanjianyinxian.gitee.io/2020/10/28/hello-world/"/>
+    <id>https://shanjianyinxian.gitee.io/2020/10/28/hello-world/</id>
     <published>2020-10-28T13:31:56.676Z</published>
     <updated>2020-10-28T13:31:56.676Z</updated>
     
