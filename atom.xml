@@ -70,6 +70,58 @@
   </entry>
   
   <entry>
+    <title>java反射读取类的私有属性并且读取实例属性值</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/03/18/java%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96%E7%B1%BB%E7%9A%84%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%B9%B6%E4%B8%94%E8%AF%BB%E5%8F%96%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%E5%80%BC/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/03/18/java%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96%E7%B1%BB%E7%9A%84%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%B9%B6%E4%B8%94%E8%AF%BB%E5%8F%96%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%E5%80%BC/</id>
+    <published>2021-03-18T12:22:33.000Z</published>
+    <updated>2021-07-10T09:28:46.319Z</updated>
+    
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/java/"/>
+    
+    
+    <category term="java" scheme="https://shanjianyinxian.gitee.io/tags/java/"/>
+    
+    <category term="反射" scheme="https://shanjianyinxian.gitee.io/tags/%E5%8F%8D%E5%B0%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java中String和byte[]中文转换的问题</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/03/10/java%E4%B8%ADString%E5%92%8Cbyte-%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8D%A2%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/03/10/java%E4%B8%ADString%E5%92%8Cbyte-%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8D%A2%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2021-03-10T09:23:01.000Z</published>
+    <updated>2021-07-10T09:29:06.591Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>软件：java8</p></blockquote><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>今天在java的二进制byte和string类型的编解码中遇到了阻碍，因此仔细研究了一下相关的编解码问题。</p><hr><p>本文介绍了java中 byte[] 和 String 的相互转换。</p><p>通过String的getBytes()方法是可以得到一个字符串的字节数组，但特别要注意的是，getBytes()方法将返回该操作系统默认的编码格式的字节数组。 </p><ul><li><p>string转byte[] 无中文</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String strHello = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"><span class="keyword">byte</span>[] bHello = strHello.getBytes();</span><br></pre></td></tr></table></figure></li><li><p>byte[]转string 无中文</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String strHello = <span class="keyword">new</span> String(bHello);</span><br></pre></td></tr></table></figure></li><li><p>string转byte[] 有中文</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String strChinese = <span class="string">&quot;大吉大利&quot;</span>；</span><br><span class="line"><span class="keyword">byte</span>[] bChinese_gbk = strChinese.getBytes(<span class="string">&quot;GBK&quot;</span>); <span class="comment">//GBK编码格式</span></span><br><span class="line"><span class="keyword">byte</span>[] bChinese_utf8 = strChinese.getBytes(<span class="string">&quot;UTF-8&quot;</span>); <span class="comment">// UFT-8编码格式</span></span><br><span class="line"><span class="keyword">byte</span>[] bChinese_iso88591 = strChinese.getBytes(<span class="string">&quot;ISO8859-1&quot;</span>);</span><br></pre></td></tr></table></figure></li><li><p>byte[]转string 有中文</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String strChinese_gbk = <span class="keyword">new</span> String(bChinese_gbk,<span class="string">&quot;GBK&quot;</span>);</span><br><span class="line">String strChinese_utf8 = <span class="keyword">new</span> String(bChinese_utf8,<span class="string">&quot;UTF-8&quot;</span>); </span><br><span class="line">String strChinese_iso88591 = <span class="keyword">new</span> String(bChinese_iso88591,<span class="string">&quot;ISO8859-1&quot;</span>);</span><br><span class="line"><span class="comment">// &quot;ISO8859-1&quot;编码中无中文字符，因此strChinese_iso88591无法还原得到中文</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;软件：java8&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;今天在java的二进制byte和string类型的编解</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/java/"/>
+    
+    
+    <category term="java" scheme="https://shanjianyinxian.gitee.io/tags/java/"/>
+    
+    <category term="编解码" scheme="https://shanjianyinxian.gitee.io/tags/%E7%BC%96%E8%A7%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mysql-mysql5.5用户无需密码即可登录问题</title>
     <link href="https://shanjianyinxian.gitee.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/"/>
     <id>https://shanjianyinxian.gitee.io/2020/11/30/mysql-mysql5-5%E7%94%A8%E6%88%B7%E6%97%A0%E9%9C%80%E5%AF%86%E7%A0%81%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/</id>
