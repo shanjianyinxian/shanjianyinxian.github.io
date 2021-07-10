@@ -70,6 +70,40 @@
   </entry>
   
   <entry>
+    <title>运维经验</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/06/18/%E8%BF%90%E7%BB%B4%E7%BB%8F%E9%AA%8C/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/06/18/%E8%BF%90%E7%BB%B4%E7%BB%8F%E9%AA%8C/</id>
+    <published>2021-06-18T08:31:17.000Z</published>
+    <updated>2021-07-10T12:45:34.563Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>操作系统：linux</p></blockquote><p>不定期更新，记录自己遇到的运维经验总结。</p><hr><ul><li><p>top命令 load average：三个值  分别代表 <strong>最近1分钟</strong>、<strong>最近5分钟</strong>和<strong>最近15分钟</strong>的平均负载</p><ul><li>通常，如果系统的负载值超过了2，就说明系统比较繁忙了。<br>Linux系统管理的要点在于定义究竟到什么程度才算是高负载。这个值取决于系统的硬件配置以及系统上通常运行的程序。对某个系统来说是高负载的值可能对另一系统来说就是正常值。</li><li>由于进程短期的突发性活动，出现最近1分钟的高负载值也很常见，但如果近15分钟内的平均负载都很高，就说明系统可能有问题。</li></ul></li><li><p>du -sh * | sort -nr  该命令可以用于对文件大小的排序显示</p><ul><li>sort -n 在排序数值时非常有用</li><li>sort -r 逆序，从大到小</li><li>du -h 清楚显示</li><li>du -s 显示每个输出参数的总计，即仅显示总计,只列出最后加总的值 </li></ul></li><li><p>tar 的压缩与解压 <a href="https://www.cnblogs.com/hester/p/10449978.html">https://www.cnblogs.com/hester/p/10449978.html</a></p><ul><li>tar -zxvf filename.tgz<br>下载了开源软件之后，你会经常看到文件名以.tgz结尾(.tar.gz)。这些是gzip压缩过的tar文件可以用命令来解压。</li><li>tar -zcvf filename.tgz<br>解压</li></ul></li><li><p>cat /etc/passwd 第七列查看用户使用的shell</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /etc/passwd</span></span><br><span class="line">[...]</span><br><span class="line">moon:x:1000:1000::/home/moon:/bin/bash</span><br></pre></td></tr></table></figure></li><li><p>默认的系统shell和默认的交互shell软连接可能不同，即/etc/passwd 中的shell和/bin下sh软连接指向的shell不同，这个可能会带来某些问题。因此shell脚本首行指定shell解释器不可少</p><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">[<span class="type">...</span>]</span><br></pre></td></tr></table></figure></li><li><p>ps -ef很常用，-H可以更清楚的显示进程间层级关系</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[moon@myserver 002shell]$ ps -efH | grep bash</span><br><span class="line">moon       3620   3619  0 13:41 pts/0    00:00:00         -bash</span><br><span class="line">moon       5419   3620  0 14:23 pts/0    00:00:00           bash</span><br><span class="line">moon       5565   5419  0 14:29 pts/0    00:00:00             grep --color=auto bash</span><br><span class="line">root      10282  10265  0  2020 pts/0    00:00:00       /bin/bash</span><br><span class="line">root      41399  41382  0  2020 ?        00:00:00       bash run.sh</span><br><span class="line">moon     105516 105515  0 Apr17 pts/2    00:00:00     /bin/bash</span><br></pre></td></tr></table></figure></li><li><p>echo $BASH_SUBSHELL<br>要想知道是否生成了子shell，得借助一个使用了环境变量的命令。这个命令就是echo $BASH_SUBSHELL。如果该命令返回0，就表明没有子shell。如果返回1或者其他更大的数字，就表明存在子shell。</p></li><li><p>jobs<br>除了ps命令，你也可以使用jobs命令来显示后台作业信息。jobs命令可以显示出当前运行在后台模式中的所有用户的进程（作业）。</p></li><li><p>使用后台模式，进程列表和协程，利用子shell组合任务并且执行，可以让shell的I/O不受制于终端</p></li><li><p>/etc/group查看组列表时，有些组并没有列出用户，这并不是说这些组没有成员。当一个用户在/etc/passwd文件中指定某个组作为默认组时，用户账户不会作为该组成员再出现在/etc/group文件中。</p></li><li><p>记住，bash shell只能处理整数。如果你只是要通过echo语句来显示这个结果，那没问题。但是，在基于数字的函数中就不行了，例如我们的数值测试条件。最后一行就说明我们不能在test命令中使用浮点值</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat floating_point_test.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Using floating point numbers <span class="keyword">in</span> <span class="built_in">test</span> evaluations</span></span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line">value1=5.555</span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line">echo &quot;The test value is $value1&quot;</span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line">if [ $value1 -gt 5 ]</span><br><span class="line">　 then</span><br><span class="line">　　echo &quot;The test value $value1 is greater than 5&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./floating_point_test.sh</span></span><br><span class="line">The test value is 5.555</span><br><span class="line">./floating_point_test.sh: line 8:</span><br><span class="line">[: 5.555: integer expression expected</span><br><span class="line"><span class="meta">$</span></span><br></pre></td></tr></table></figure></li><li><p>shell 脚本中 if 条件比较字符串时，＞ 和 ＜ 需要转义符号，不然会被认成重定向</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">if [ $val1 \&gt; $val2 ]</span><br><span class="line">then</span><br><span class="line">[...]</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li><li><p>shell脚本在test比较测试中，大写字母被认为是小于小写字母的。但sort命令恰好相反。当你将同样的字符串放进文件中并用sort命令排序时，小写字母会先出现。这是由各个命令使用的排序技术不同造成的。</p></li><li><p>空的和未初始化的变量会对shell脚本测试造成灾难性的影响。如果不是很确定一个变量的内容，最好在将其用于数值或字符串比较之前先通过-n或-z来测试一下变量是否含有值。<br>-n和-z可以检查一个变量是否含有数据。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">if [ -n $val1 ]</span><br><span class="line">if [ -z $val2 ]</span><br><span class="line">if [ -z $val3 ]</span><br></pre></td></tr></table></figure></li><li><p>一般来说，可以使用，模板文件配合shell中的sed命令对源文件进行替换，进而完成许多定制的功能。比如：对一个python文件进行修改。可以先定义一个python模板，然后每次复制python文件的模板，使用sed命令替换被复制的模板。比如：<br>这是python文件模板</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#demo-template.py</span></span><br><span class="line">kwargs= &#123; <span class="string">&#x27;parm_a&#x27;</span> : %parm_a%, <span class="string">&#x27;parm_b&#x27;</span>: %parm_b%, <span class="string">&#x27;parm_c&#x27;</span>: %parm_c%&#125;</span><br></pre></td></tr></table></figure><p>这是shell指令：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp demo-template.py demo.py</span><br><span class="line">sed -i &quot;/s/%parm_a%/1/g&quot; demo.py</span><br><span class="line">sed -i &quot;/s/%parm_b%/2/g&quot; demo.py</span><br><span class="line">sed -i &quot;/s/%parm_c%/3/g&quot; demo.py</span><br></pre></td></tr></table></figure><p>这是替换之后的文件</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#demo.py</span></span><br><span class="line">kwargs= &#123; <span class="string">&#x27;parm_a&#x27;</span> : <span class="number">1</span>, <span class="string">&#x27;parm_b&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;parm_c&#x27;</span>:<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure><p>这样我们可以从外界定义一个配置文件或者自定义一个主控程序根据需要动态的修改文本内容，达到不同的效果。</p></li><li><p>sed命令的分隔符 反斜杠 “/” 经常出问题（比如文件内容中含有路径这样带有反斜杠的文本）。建议换成 “#”</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;操作系统：linux&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不定期更新，记录自己遇到的运维经验总结。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;top命令 load average：三个值  分别代表 &lt;strong&gt;最近1分钟&lt;/strong</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
+    
+    
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/tags/linux/"/>
+    
+    <category term="运维" scheme="https://shanjianyinxian.gitee.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java反射读取类的私有属性并且读取实例属性值</title>
     <link href="https://shanjianyinxian.gitee.io/2021/03/18/java%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96%E7%B1%BB%E7%9A%84%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%B9%B6%E4%B8%94%E8%AF%BB%E5%8F%96%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%E5%80%BC/"/>
     <id>https://shanjianyinxian.gitee.io/2021/03/18/java%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96%E7%B1%BB%E7%9A%84%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%B9%B6%E4%B8%94%E8%AF%BB%E5%8F%96%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%E5%80%BC/</id>
@@ -224,40 +258,6 @@
     <category term="centos" scheme="https://shanjianyinxian.gitee.io/tags/centos/"/>
     
     <category term="firewalld" scheme="https://shanjianyinxian.gitee.io/tags/firewalld/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>运维经验</title>
-    <link href="https://shanjianyinxian.gitee.io/2020/11/18/%E8%BF%90%E7%BB%B4%E7%BB%8F%E9%AA%8C/"/>
-    <id>https://shanjianyinxian.gitee.io/2020/11/18/%E8%BF%90%E7%BB%B4%E7%BB%8F%E9%AA%8C/</id>
-    <published>2020-11-18T08:31:17.000Z</published>
-    <updated>2021-07-10T09:56:21.437Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>操作系统：linux</p></blockquote><p>不定期更新，记录自己遇到的运维经验总结。</p><hr><ul><li><p>top命令 load average：三个值  分别代表 <strong>最近1分钟</strong>、<strong>最近5分钟</strong>和<strong>最近15分钟</strong>的平均负载</p><ul><li>通常，如果系统的负载值超过了2，就说明系统比较繁忙了。<br>Linux系统管理的要点在于定义究竟到什么程度才算是高负载。这个值取决于系统的硬件配置以及系统上通常运行的程序。对某个系统来说是高负载的值可能对另一系统来说就是正常值。</li><li>由于进程短期的突发性活动，出现最近1分钟的高负载值也很常见，但如果近15分钟内的平均负载都很高，就说明系统可能有问题。</li></ul></li><li><p>du -sh * | sort -nr  该命令可以用于对文件大小的排序显示</p><ul><li>sort -n 在排序数值时非常有用</li><li>sort -r 逆序，从大到小</li><li>du -h 清楚显示</li><li>du -s 显示每个输出参数的总计，即仅显示总计,只列出最后加总的值 </li></ul></li><li><p>tar 的压缩与解压 <a href="https://www.cnblogs.com/hester/p/10449978.html">https://www.cnblogs.com/hester/p/10449978.html</a></p><ul><li>tar -zxvf filename.tgz<br>下载了开源软件之后，你会经常看到文件名以.tgz结尾(.tar.gz)。这些是gzip压缩过的tar文件可以用命令来解压。</li><li>tar -zcvf filename.tgz<br>解压</li></ul></li><li><p>cat /etc/passwd 第七列查看用户使用的shell</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /etc/passwd</span></span><br><span class="line">[...]</span><br><span class="line">moon:x:1000:1000::/home/moon:/bin/bash</span><br></pre></td></tr></table></figure></li><li><p>默认的系统shell和默认的交互shell软连接可能不同，即/etc/passwd 中的shell和/bin下sh软连接指向的shell不同，这个可能会带来某些问题。因此shell脚本首行指定shell解释器不可少</p><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">[<span class="type">...</span>]</span><br></pre></td></tr></table></figure></li><li><p>ps -ef很常用，-H可以更清楚的显示进程间层级关系</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[moon@myserver 002shell]$ ps -efH | grep bash</span><br><span class="line">moon       3620   3619  0 13:41 pts/0    00:00:00         -bash</span><br><span class="line">moon       5419   3620  0 14:23 pts/0    00:00:00           bash</span><br><span class="line">moon       5565   5419  0 14:29 pts/0    00:00:00             grep --color=auto bash</span><br><span class="line">root      10282  10265  0  2020 pts/0    00:00:00       /bin/bash</span><br><span class="line">root      41399  41382  0  2020 ?        00:00:00       bash run.sh</span><br><span class="line">moon     105516 105515  0 Apr17 pts/2    00:00:00     /bin/bash</span><br></pre></td></tr></table></figure></li><li><p>echo $BASH_SUBSHELL<br>要想知道是否生成了子shell，得借助一个使用了环境变量的命令。这个命令就是echo $BASH_SUBSHELL。如果该命令返回0，就表明没有子shell。如果返回1或者其他更大的数字，就表明存在子shell。</p></li><li><p>jobs<br>除了ps命令，你也可以使用jobs命令来显示后台作业信息。jobs命令可以显示出当前运行在后台模式中的所有用户的进程（作业）。</p></li><li><p>使用后台模式，进程列表和协程，利用子shell组合任务并且执行，可以让shell的I/O不受制于终端</p></li><li><p>/etc/group查看组列表时，有些组并没有列出用户，这并不是说这些组没有成员。当一个用户在/etc/passwd文件中指定某个组作为默认组时，用户账户不会作为该组成员再出现在/etc/group文件中。</p></li><li><p>记住，bash shell只能处理整数。如果你只是要通过echo语句来显示这个结果，那没问题。但是，在基于数字的函数中就不行了，例如我们的数值测试条件。最后一行就说明我们不能在test命令中使用浮点值</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat floating_point_test.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Using floating point numbers <span class="keyword">in</span> <span class="built_in">test</span> evaluations</span></span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line">value1=5.555</span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line">echo &quot;The test value is $value1&quot;</span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line">if [ $value1 -gt 5 ]</span><br><span class="line">　 then</span><br><span class="line">　　echo &quot;The test value $value1 is greater than 5&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta">　 #</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./floating_point_test.sh</span></span><br><span class="line">The test value is 5.555</span><br><span class="line">./floating_point_test.sh: line 8:</span><br><span class="line">[: 5.555: integer expression expected</span><br><span class="line"><span class="meta">$</span></span><br></pre></td></tr></table></figure></li><li><p>shell 脚本中 if 条件比较字符串时，＞ 和 ＜ 需要转义符号，不然会被认成重定向</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">if [ $val1 \&gt; $val2 ]</span><br><span class="line">then</span><br><span class="line">[...]</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></li><li><p>shell脚本在test比较测试中，大写字母被认为是小于小写字母的。但sort命令恰好相反。当你将同样的字符串放进文件中并用sort命令排序时，小写字母会先出现。这是由各个命令使用的排序技术不同造成的。</p></li><li><p>空的和未初始化的变量会对shell脚本测试造成灾难性的影响。如果不是很确定一个变量的内容，最好在将其用于数值或字符串比较之前先通过-n或-z来测试一下变量是否含有值。<br>-n和-z可以检查一个变量是否含有数据。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">if [ -n $val1 ]</span><br><span class="line">if [ -z $val2 ]</span><br><span class="line">if [ -z $val3 ]</span><br></pre></td></tr></table></figure></li><li><p>一般来说，可以使用，模板文件配合shell中的sed命令对源文件进行替换，进而完成许多定制的功能。比如：对一个python文件进行修改。可以先定义一个python模板，然后每次复制python文件的模板，使用sed命令替换被复制的模板。比如：<br>这是python文件模板</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#demo-template.py</span></span><br><span class="line">kwargs= &#123; <span class="string">&#x27;parm_a&#x27;</span> : %parm_a%, <span class="string">&#x27;parm_b&#x27;</span>: %parm_b%, <span class="string">&#x27;parm_c&#x27;</span>: %parm_c%&#125;</span><br></pre></td></tr></table></figure><p>这是shell指令：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp demo-template.py demo.py</span><br><span class="line">sed -i &quot;/s/%parm_a%/1/g&quot; demo.py</span><br><span class="line">sed -i &quot;/s/%parm_b%/2/g&quot; demo.py</span><br><span class="line">sed -i &quot;/s/%parm_c%/3/g&quot; demo.py</span><br></pre></td></tr></table></figure><p>这是替换之后的文件</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#demo.py</span></span><br><span class="line">kwargs= &#123; <span class="string">&#x27;parm_a&#x27;</span> : <span class="number">1</span>, <span class="string">&#x27;parm_b&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;parm_c&#x27;</span>:<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure><p>这样我们可以从外界定义一个配置文件或者自定义一个主控程序根据需要动态的修改文本内容，达到不同的效果。</p></li><li><p>sed命令的分隔符 反斜杠 “/” 经常出问题（比如文件内容中含有路径这样带有反斜杠的文本）。建议换成 “#”</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;操作系统：linux&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;不定期更新，记录自己遇到的运维经验总结。&lt;/p&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;top命令 load average：三个值  分别代表 &lt;strong&gt;最近1分钟&lt;/strong</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="linux" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
-    
-    
-    <category term="linux" scheme="https://shanjianyinxian.gitee.io/tags/linux/"/>
-    
-    <category term="运维" scheme="https://shanjianyinxian.gitee.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
