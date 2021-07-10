@@ -46,26 +46,36 @@
   </entry>
   
   <entry>
-    <title>好久不见</title>
-    <link href="https://shanjianyinxian.gitee.io/2021/07/06/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/"/>
-    <id>https://shanjianyinxian.gitee.io/2021/07/06/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/</id>
-    <published>2021-07-06T06:59:13.000Z</published>
-    <updated>2021-07-06T08:07:38.207Z</updated>
+    <title>虚拟机Ubuntu 18.04.2 LTS设置固定ip过程</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/07/04/%E8%99%9A%E6%8B%9F%E6%9C%BAUbuntu-18-04-2-LTS%E8%AE%BE%E7%BD%AE%E5%9B%BA%E5%AE%9Aip%E8%BF%87%E7%A8%8B/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/07/04/%E8%99%9A%E6%8B%9F%E6%9C%BAUbuntu-18-04-2-LTS%E8%AE%BE%E7%BD%AE%E5%9B%BA%E5%AE%9Aip%E8%BF%87%E7%A8%8B/</id>
+    <published>2021-07-04T15:25:50.000Z</published>
+    <updated>2021-07-10T15:41:12.732Z</updated>
     
-    <content type="html"><![CDATA[<p>好久没有更新自己的博客了，过完年之后工作十分忙碌，比赛，项目，运维等等一系列事情需要去做。当时觉得一直不更新也不好，于是中途关闭了自己的博客。虽然博客关了，但这段时间的工作也一直保持学习。工作的过程也会遇到很多问题， 每次问题的解决对个人来说也是一次成长。这次重新开通博客也是希望能和更多的人交流。</p><p>最后，最近gitee没法开启个人博客。因此暂时只保留github的页面。之后也会同步gitee的个人博客。主要是github可能有时候访问较慢，有了gitee之后会好很多。</p><p>以上。o(<em>￣▽￣</em>)ブ</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>操作系统：Ubuntu 18.04.2 LTS</p><p>虚拟机：VMware 12</p></blockquote><p>设置多个虚拟机组件集群的时候，需要配置各个虚拟机有着不同的ip地址。因此这里简单介绍一下如何配置虚拟机ip。</p><hr><ul><li><p><strong>设置虚拟机网络为nat模式</strong><br><img src="/2021/07/04/%E8%99%9A%E6%8B%9F%E6%9C%BAUbuntu-18-04-2-LTS%E8%AE%BE%E7%BD%AE%E5%9B%BA%E5%AE%9Aip%E8%BF%87%E7%A8%8B/01.png" alt="01"></p></li><li><p><strong>打开虚拟机网络编辑器选项</strong><br><img src="/2021/07/04/%E8%99%9A%E6%8B%9F%E6%9C%BAUbuntu-18-04-2-LTS%E8%AE%BE%E7%BD%AE%E5%9B%BA%E5%AE%9Aip%E8%BF%87%E7%A8%8B/02.png" alt="02"></p></li><li><p><strong>更改设置，取消DHCP服务，设定子网ip(该服务是用来动态分配ip地址)</strong><br><img src="/2021/07/04/%E8%99%9A%E6%8B%9F%E6%9C%BAUbuntu-18-04-2-LTS%E8%AE%BE%E7%BD%AE%E5%9B%BA%E5%AE%9Aip%E8%BF%87%E7%A8%8B/03.png" alt="03"></p></li><li><p><strong>网关ip</strong><br><img src="/2021/07/04/%E8%99%9A%E6%8B%9F%E6%9C%BAUbuntu-18-04-2-LTS%E8%AE%BE%E7%BD%AE%E5%9B%BA%E5%AE%9Aip%E8%BF%87%E7%A8%8B/05.png" alt="05"></p></li><li><p><strong>sudo vim /etc/network/interfaces 修改网络配置</strong></p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cat /etc/network/interfaces</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># interfaces(5) file used by ifup(8) and ifdown(8)</span></span><br><span class="line"><span class="string">auto</span> <span class="string">lo</span></span><br><span class="line"><span class="string">iface</span> <span class="string">lo</span> <span class="string">inet</span> <span class="string">loopback</span></span><br><span class="line"></span><br><span class="line"><span class="string">auto</span> <span class="string">ens33</span> <span class="comment">#查看自己的网卡名称，可以通过ifconfig命令查询</span></span><br><span class="line"><span class="string">iface</span> <span class="string">ens33</span> <span class="string">inet</span> <span class="string">static</span> <span class="comment">#设置该网卡为静态ip</span></span><br><span class="line"><span class="string">address</span> <span class="number">192.168</span><span class="number">.73</span><span class="number">.129</span> <span class="comment">#静态IP地址设置</span></span><br><span class="line"><span class="string">netmask</span> <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> <span class="comment">#掩码设置</span></span><br><span class="line"><span class="string">gateway</span> <span class="number">192.168</span><span class="number">.73</span><span class="number">.2</span> <span class="comment">#网关ip设置</span></span><br><span class="line"><span class="string">dns-nameservers</span> <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span> <span class="number">114.114</span><span class="number">.114</span><span class="number">.114</span> <span class="comment">#DNS服务器地址设置（解析域名，访问外网）</span></span><br></pre></td></tr></table></figure></li><li><p><strong>若出现可以ping通DNS服务器，但是不能ping通域名，则DNS设置仍然有问题，修改/etc/systemd/resolved.conf内容</strong></p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cat /etc/systemd/resolved.conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  This file is part of systemd.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#  systemd is free software; you can redistribute it and/or modify it</span></span><br><span class="line"><span class="comment">#  under the terms of the GNU Lesser General Public License as published by</span></span><br><span class="line"><span class="comment">#  the Free Software Foundation; either version 2.1 of the License, or</span></span><br><span class="line"><span class="comment">#  (at your option) any later version.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Entries in this file show the compile time defaults.</span></span><br><span class="line"><span class="comment"># You can change settings by editing this file.</span></span><br><span class="line"><span class="comment"># Defaults can be restored by simply deleting this file.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See resolved.conf(5) for details</span></span><br><span class="line"></span><br><span class="line">[<span class="string">Resolve</span>]</span><br><span class="line"><span class="comment">#添加DNS服务器地址</span></span><br><span class="line"><span class="string">DNS=114.114.114.114</span></span><br><span class="line"><span class="string">DNS=8.8.8.8</span></span><br><span class="line"><span class="comment">#DNS=</span></span><br><span class="line"><span class="comment">#FallbackDNS=</span></span><br><span class="line"><span class="comment">#Domains=</span></span><br><span class="line"><span class="comment">#LLMNR=no</span></span><br><span class="line"><span class="comment">#MulticastDNS=no</span></span><br><span class="line"><span class="comment">#DNSSEC=no</span></span><br><span class="line"><span class="comment">#Cache=yes</span></span><br><span class="line"><span class="comment">#DNSStubListener=yes</span></span><br></pre></td></tr></table></figure></li><li><p><strong>重启机器</strong></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;好久没有更新自己的博客了，过完年之后工作十分忙碌，比赛，项目，运维等等一系列事情需要去做。当时觉得一直不更新也不好，于是中途关闭了自己的博客。虽然博客关了，但这段时间的工作也一直保持学习。工作的过程也会遇到很多问题， 每次问题的解决对个人来说也是一次成长。这次重新开通博客也</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;操作系统：Ubuntu 18.04.2 LTS&lt;/p&gt;
+&lt;p&gt;虚拟机：VMware 12&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;设置多个虚拟机组件集群的时候，需要配置各个虚拟机有着不同的ip地址。因此这里简单介绍一下如何配置虚拟机ip。&lt;/p&gt;</summary>
       
     
     
     
-    <category term="生活" scheme="https://shanjianyinxian.gitee.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
     
     
-    <category term="随笔" scheme="https://shanjianyinxian.gitee.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="linux" scheme="https://shanjianyinxian.gitee.io/tags/linux/"/>
+    
+    <category term="运维" scheme="https://shanjianyinxian.gitee.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="虚拟机" scheme="https://shanjianyinxian.gitee.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
@@ -100,6 +110,30 @@
     <category term="linux" scheme="https://shanjianyinxian.gitee.io/tags/linux/"/>
     
     <category term="运维" scheme="https://shanjianyinxian.gitee.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好久不见</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/06/06/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/06/06/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/</id>
+    <published>2021-06-06T06:59:13.000Z</published>
+    <updated>2021-07-10T12:57:51.302Z</updated>
+    
+    <content type="html"><![CDATA[<p>好久没有更新自己的博客了，过完年之后工作十分忙碌，比赛，项目，运维等等一系列事情需要去做。当时觉得一直不更新也不好，于是中途关闭了自己的博客。虽然博客关了，但这段时间的工作也一直保持学习。工作的过程也会遇到很多问题， 每次问题的解决对个人来说也是一次成长。这次重新开通博客也是希望能和更多的人交流。</p><p>最后，最近gitee没法开启个人博客。因此暂时只保留github的页面。之后也会同步gitee的个人博客。主要是github可能有时候访问较慢，有了gitee之后会好很多。</p><p>以上。o(<em>￣▽￣</em>)ブ</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;好久没有更新自己的博客了，过完年之后工作十分忙碌，比赛，项目，运维等等一系列事情需要去做。当时觉得一直不更新也不好，于是中途关闭了自己的博客。虽然博客关了，但这段时间的工作也一直保持学习。工作的过程也会遇到很多问题， 每次问题的解决对个人来说也是一次成长。这次重新开通博客也</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://shanjianyinxian.gitee.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="随笔" scheme="https://shanjianyinxian.gitee.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
