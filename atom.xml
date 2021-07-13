@@ -6,7 +6,7 @@
   <link href="https://shanjianyinxian.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://shanjianyinxian.gitee.io/"/>
-  <updated>2021-07-10T16:18:39.527Z</updated>
+  <updated>2021-07-13T15:00:43.087Z</updated>
   <id>https://shanjianyinxian.gitee.io/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ELK日志系统的麻烦日常</title>
+    <link href="https://shanjianyinxian.gitee.io/2021/07/13/ELK%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%BA%BB%E7%83%A6%E6%97%A5%E5%B8%B8/"/>
+    <id>https://shanjianyinxian.gitee.io/2021/07/13/ELK%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%BA%BB%E7%83%A6%E6%97%A5%E5%B8%B8/</id>
+    <published>2021-07-13T13:19:50.000Z</published>
+    <updated>2021-07-13T15:00:43.087Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>软件：ELK+filebeat 7.1.1</p></blockquote><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>不定期更新，记录平时遇到的ELK+filebeat日志系统的坑。</p><hr><ul><li><p><strong>请对logstash和elasticsearch使用集群</strong><br>单机部署的就没有命久的，总是启停很麻烦。logstash为多实例，es为集群。尽量保证一台机器部署一个logstash或者es实例。这两个都是吃内存大户。<br>如果成本有所不足可以考虑es的热温冷架构。热节点使用ssd提升io，稳冷节点使用普通硬盘即可。</p></li><li><p><strong>filebeat传输logstash启动负载均衡</strong></p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#vim filebeat.yml</span></span><br><span class="line"><span class="attr">output.logstash:</span></span><br><span class="line">  <span class="comment"># The Logstash hosts</span></span><br><span class="line">  <span class="attr">hosts:</span> <span class="string">%logstash_url_list%</span></span><br><span class="line">  <span class="attr">loadbalance:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p><code>loadbalance</code>为false则会变成类似主备的方式向logstash输送数据。filebeat会自动检测想要传输数据的logstash是否忙，如果忙则传输到另一个logstash实例。</p></li><li><p><strong>filebeat支持使用环境变量，结果环境变量是中文，linux系统编码是GBK，elk系统默认编码utf-8，最后传到es里面全是乱码</strong><br>终极解决办法：使用UTF-8编码方式写一个shell脚本。在脚本里面export需要的中文环境变量。然后脚本内部执行filebeat。<br>别修改linux系统的编码了，修改完同机其他服务程序崩了。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> encoding: utf-8</span></span><br><span class="line">export A=&quot;哈哈&quot;</span><br><span class="line">nohup $PWD/filebeat -e -c filebeat.yml &amp;</span><br></pre></td></tr></table></figure><p>如果filebeat的配置文件中使用了{A}这个环境变量，则此时编码正确。</p></li><li><p><strong>如上，elk+filebeat启动时候最好加上绝对路径启动</strong><br>使用<code>ps -ef |grep ***</code>查询elk+filebeat的进程时候，如果使用相对路径启动组件，则结果返回的也是相对路径。对于运维来说比较难管理，只有部署的人自己知道这个组件放在了哪里。</p></li><li><p><strong>能用shell脚本控制就用脚本控制</strong><br>shell脚本不只是说解决中文环境变量问题，可以使用脚本切换使用的jdk版本（logstash和es需要），也可以不用每次手动输入运行指令，也可以运行多个指令完成更为复杂的控制。能用一行命令解决的问题就别重复写多次。</p></li><li><p><strong>生产环境千万别用如下这个插件</strong></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#cat one-pipeline.conf</span><br><span class="line">output&#123;</span><br><span class="line">stdout &#123;</span><br><span class="line">    codec &#x3D;&gt; rubydebug</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>测试过不加这个，让我的性能提升了3倍。该语句会输出每条被处理的数据到控制台，会大幅降低logstash处理效率，并且该组件有未知bug导致logstash停止工作（具体在查看logstash日志时候会提示ruby output的未知错误并且提示用户重启logstash）。为了生产环境的稳定，别加入这种用于调试的输出插件。</p></li><li><p><strong>有logstash和es的jvm调优意识</strong><br>es和logstash为java程序，jvm默认1g内存占用，这完全不够用。按照官方建议不要超过32G，不要超过内存的50%。-Xms -Xmx 两个参数设置为相同</p></li><li><p><strong>请使用索引模板，设置生命周期管理，不然磁盘很容易满</strong><br>生命周期管理天然适配热温冷架构，生命周期管理一般与索引模板相结合使用，使用kibana设置索引模板，然后在kibana内就可以可视化自定义生命周期管理策略，并且绑定到索引模板上。<br>对于日志系统来说，越久远的日志越无价值。因此使用生命周期管理可以及时删除过期日志数据。<br>模板文件规定了分片，副本，字段映射与格式，生命周期，索引别名等配置。对管理es索引很有用，因此请在导入数据之前先规定好索引模板。</p></li><li><p><strong>如果logstash要处理不同日志格式的数据，建议还是使用pipeline吧</strong><br>对于多日志格式的解析，有一种解决办法是在filebeat中对不同的日志格式创建不同的tag，并且在logstash的filter组件中使用if条件判断是哪一种日志格式。这是一种单管道的处理方式，这种方式会导致logstash.conf处理管道配置文件变得繁琐并且可读性极差。万一管道出错停止运行，两种格式都无法解析。<br>可以在pipelines.yml中配置多个管道，对于不同格式的日志文件各占据一个管道。唯一需要注意的是每个管道conf文件中的input beat端口需要不同。</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">pipeline.id:</span> <span class="string">template1</span></span><br><span class="line">  <span class="attr">path.config:</span> <span class="string">&quot;%config_pipeline_path%/logstash-template1.conf&quot;</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">pipeline.id:</span> <span class="string">template2</span></span><br><span class="line">  <span class="attr">path.config:</span> <span class="string">&quot;%config_pipeline_path%/logstash-template2.conf&quot;</span></span><br></pre></td></tr></table></figure></li><li><p><strong>logstash连接达梦数据库的jdbc组件写法，是模仿Oracle的</strong></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input&#123;</span><br><span class="line">    jdbc &#123;</span><br><span class="line">        ...</span><br><span class="line">        jdbc_driver_class &#x3D;&gt; &quot;Java::dm.jdbc.driver.DmDriver&quot; &#x2F;&#x2F;这里一定要加上Java::，mysql则不用加</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>达梦一点文档没有，这我折腾了好久。。。后来无意中看到达梦是模仿Oracle写的，加上就发现好使了。</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;软件：ELK+filebeat 7.1.1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;不定期更新，记录平时遇到的E</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
+    
+    
+    <category term="ELK" scheme="https://shanjianyinxian.gitee.io/tags/ELK/"/>
+    
+    <category term="elasticsearch" scheme="https://shanjianyinxian.gitee.io/tags/elasticsearch/"/>
+    
+    <category term="kibana" scheme="https://shanjianyinxian.gitee.io/tags/kibana/"/>
+    
+    <category term="logstash" scheme="https://shanjianyinxian.gitee.io/tags/logstash/"/>
+    
+    <category term="filebeat" scheme="https://shanjianyinxian.gitee.io/tags/filebeat/"/>
+    
+  </entry>
   
   <entry>
     <title>踩坑日记-python的浮点数比对</title>
@@ -606,43 +643,6 @@
     <category term="ELK" scheme="https://shanjianyinxian.gitee.io/tags/ELK/"/>
     
     <category term="kibana" scheme="https://shanjianyinxian.gitee.io/tags/kibana/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos安装jdk1.8</title>
-    <link href="https://shanjianyinxian.gitee.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/"/>
-    <id>https://shanjianyinxian.gitee.io/2020/10/30/centos%E5%AE%89%E8%A3%85jdk1.8/</id>
-    <published>2020-10-30T06:28:11.000Z</published>
-    <updated>2020-10-30T06:52:12.217Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>操作系统：centos7<br>软件：jdk1.8</p></blockquote><p>这里简单记录了当时自己安装jdk1.8的过程。</p><hr><ol><li><p>将jdk解压至/usr/local/路径下</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf jdk-8u152-linux-x64.tar.gz -C /usr/<span class="built_in">local</span>/</span></span><br></pre></td></tr></table></figure></li><li><p>设置环境变量</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim /etc/profile </span></span><br></pre></td></tr></table></figure><p>末尾加入</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/share/jdk1.8.0_152</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br></pre></td></tr></table></figure></li><li><p>使环境变量生效</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure></li><li><p>添加软连接</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ln -s /usr/<span class="built_in">local</span>/jdk1.8.0_152/bin/java /usr/bin/java</span></span><br></pre></td></tr></table></figure></li><li><p>检查是否安装成功</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> java -version</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;操作系统：centos7&lt;br&gt;软件：jdk1.8&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这里简单记录了当时自己安装jdk1.8的过程。&lt;/p&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;将jdk解压至/usr/local/路径下&lt;/p&gt;
-&lt;figur</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="linux" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/linux/"/>
-    
-    <category term="java" scheme="https://shanjianyinxian.gitee.io/categories/%E6%8A%80%E6%9C%AF/java/"/>
-    
-    
-    <category term="linux" scheme="https://shanjianyinxian.gitee.io/tags/linux/"/>
-    
-    <category term="java" scheme="https://shanjianyinxian.gitee.io/tags/java/"/>
     
   </entry>
   
